@@ -14,3 +14,47 @@ Installation
   * Clear cache
 
         $ symfony cc
+
+Usage
+-----
+
+    [PHP]
+
+    // creating a YML document
+    $yml = new sfYandexYML(
+        'My eShop',
+        'OOO Roga&Kopita',
+        'http://my-shop.com');
+
+    // creating categories
+    $cat1 = new sfYandexYMLCategory(1, 'T-shirts');
+    $cat2 = new sfYandexYMLCategory(2, 'Drinks');
+    $cat2 = new sfYandexYMLCategory(3, 'Vodka', 2); // child of Drinks
+
+    // adding categories to document
+    $yml->addCategory($cat1);
+    $yml->addCategory($cat2);
+    $yml->addCategory($cat3);
+
+    // creating a simple offer
+    $offer = new sfYandexYMLOffer_Model(1, true); // simple offer
+    $offer->country_of_origin = 'Russia';
+    $offer->currencyId = 'RUR';
+    $offer->categoryId = $cat3->getId();
+    $offer->delivery = true;
+    $offer->description = $product->getShortDescription();
+    $offer->downloadable=false;
+    $offer->local_delivery_cost = 200;
+    $offer->name = "Stolichnaya 0.5l";
+    $offer->picture = 'http://my-ship.com/pix/stolichnaya.jpg';
+    $offer->price = '329.99';
+    $offer->sales_notes = 'Design bottle';
+    $offer->url = 'http://my-ship.com/shop/drinks/stolichnaya05l.html';
+    $offer->vendor = 'OAO Kristall';
+    $offer->vendorCode = '12712-80';
+
+    // adding the offer to document
+    $yml->addOffer($offer);
+
+    $yml->generateYML(); // generate document
+    $yml_as_string =  $yml->saveYML(); // get YML as string
