@@ -1,0 +1,16 @@
+sfYandexYML plugin
+==============
+
+Some classes helping to create XML files for the [Yandex.Market service](http://market.yandex.ru).
+Description of the YML language [http://partner.market.yandex.ru/legal/tt/](http://partner.market.yandex.ru/legal/tt/).
+
+Installation
+------------
+
+  * Install the plugin
+
+        $ symfony plugin:install sfYandexYMLPlugin
+
+  * Clear cache
+
+        $ symfony cc
