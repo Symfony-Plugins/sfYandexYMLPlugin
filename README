@@ -46,10 +46,10 @@ Usage
     $offer->downloadable=false;
     $offer->local_delivery_cost = 200;
     $offer->name = "Stolichnaya 0.5l";
-    $offer->picture = 'http://my-ship.com/pix/stolichnaya.jpg';
+    $offer->picture = 'http://my-shop.com/pix/stolichnaya.jpg';
     $offer->price = '329.99';
     $offer->sales_notes = 'Design bottle';
-    $offer->url = 'http://my-ship.com/shop/drinks/stolichnaya05l.html';
+    $offer->url = 'http://my-shop.com/shop/drinks/stolichnaya05l.html';
     $offer->vendor = 'OAO Kristall';
     $offer->vendorCode = '12712-80';
 
